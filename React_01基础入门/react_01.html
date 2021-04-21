@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="./react.js"></script>
+  <script src="./react-dom.js"></script>
+  <script src="./babel.min.js"></script>
+  <script type="text/babel">
+    let root = document.getElementById("root");
+    //createElement(type,props,inner||children)
+    let h1 = React.createElement("h1", { id: "title" }, "Hello React");
+    let p = React.createElement("p", null, "This is P biaoqian");
+    // let header = React.createElement("header", { id: "header" }, [h1, p]);
+
+    // <!-- //React是一个渐进式的javascript库，当用上了所有的组件的时候，React才能称之为一个框架 -->
+    // ReactDOM.render(Vnode, container[, callback])
+    // ReactDOM.render(header, root);
+
+    //我们需要在js里面写静态页面的话就需要使用到jsx javascript +xml 的一些扩展语法 如果需要这语法支持那么需要一个babel的文件并且申明script的type属性为"text/babel"
+    let jsx = (
+      <header>
+        <h1 id="title">Hello React</h1> <p> 这是p标签</p>{" "}
+      </header>
+    );
+    ReactDOM.render(jsx, root);
+    // 需要注意的一些事
+    // jsx不支持语句 if for while这些就是语句
+    // 但是jsx可以使用三目运算
+  </script>
+</html>
